@@ -19,5 +19,13 @@ namespace ExtendedList
             foreach (T item in this) { result = f(result, item); }
             return result;
         }
+
+        /* map method */
+        public EList<R> Map<R>(Func<T, R> f)
+        {
+            EList<R> result = new EList<R>();
+            foreach (T item in this) { result.Add(f(item)); }
+            return result;
+        }
     }
 }
