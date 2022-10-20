@@ -13,6 +13,10 @@ namespace ExtendedList
             return String.Join(", ", this);
         }
         
+        /// <summary>
+        /// Used like .reduce() in JavaScript.
+        /// Iterate over the collection, and call a given lambda upon every item.
+        /// </summary>
         public R Reduce<R>(Func<R, T, R> f, R initial_state)
         {
             R result = initial_state;
@@ -20,7 +24,10 @@ namespace ExtendedList
             return result;
         }
 
-        /* map method */
+        /// <summary>
+        /// Used like .map() in JavaScript.
+        /// Iterate over the collection, and call a given lambda upon every item.
+        /// </summary>
         public EList<R> Map<R>(Func<T, R> f)
         {
             EList<R> result = new EList<R>();
